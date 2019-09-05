@@ -2,13 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SchemeUserState</key>
-	<dict>
-		<key>tmobilegit.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
-	</dict>
+	<key>SearchURL</key>
+	<string>https://api.github.com/search/users?q=%@</string>
+	<key>ProjectsURL</key>
+	<string>https://api.github.com/users/%@/projects</string>
 </dict>
 </plist>

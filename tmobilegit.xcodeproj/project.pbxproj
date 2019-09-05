@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050D909BE412D358CB0E3F9B /* Pods_tmobilegitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E8B858D855309485AF0FB8 /* Pods_tmobilegitUITests.framework */; };
+		1300471A317330DF763969AD /* Pods_tmobilegit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1D621C04FD620EB2399209 /* Pods_tmobilegit.framework */; };
+		79DA1324E58F7F624D3B1CC2 /* Pods_tmobilegitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082F3880235E1A2008768624 /* Pods_tmobilegitTests.framework */; };
 		EF092AE923219132001921E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092AE823219132001921E2 /* AppDelegate.swift */; };
 		EF092AEB23219132001921E2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092AEA23219132001921E2 /* MasterViewController.swift */; };
 		EF092AED23219132001921E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092AEC23219132001921E2 /* DetailViewController.swift */; };
@@ -15,6 +18,10 @@
 		EF092AF523219135001921E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF092AF323219135001921E2 /* LaunchScreen.storyboard */; };
 		EF092B0023219135001921E2 /* tmobilegitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092AFF23219135001921E2 /* tmobilegitTests.swift */; };
 		EF092B0B23219135001921E2 /* tmobilegitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B0A23219135001921E2 /* tmobilegitUITests.swift */; };
+		EF092B1923219311001921E2 /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF092B1823219311001921E2 /* Environment.plist */; };
+		EF092B1B232194C1001921E2 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B1A232194C1001921E2 /* Utility.swift */; };
+		EF092B1D23219526001921E2 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B1C23219526001921E2 /* ServiceManager.swift */; };
+		EF092B1F2321954F001921E2 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B1E2321954F001921E2 /* SearchResultModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		082F3880235E1A2008768624 /* Pods_tmobilegitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmobilegitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DD9DE08E7DF418875DA6FBF /* Pods-tmobilegit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmobilegit.release.xcconfig"; path = "Target Support Files/Pods-tmobilegit/Pods-tmobilegit.release.xcconfig"; sourceTree = "<group>"; };
+		65D72AA94F81E0F2BDE1F59B /* Pods-tmobilegitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmobilegitTests.release.xcconfig"; path = "Target Support Files/Pods-tmobilegitTests/Pods-tmobilegitTests.release.xcconfig"; sourceTree = "<group>"; };
+		874FE1E1CBF9F187EBD3BF42 /* Pods-tmobilegitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmobilegitTests.debug.xcconfig"; path = "Target Support Files/Pods-tmobilegitTests/Pods-tmobilegitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		96E8B858D855309485AF0FB8 /* Pods_tmobilegitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmobilegitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2BCF4A81259606E7CD9D7A /* Pods-tmobilegit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmobilegit.debug.xcconfig"; path = "Target Support Files/Pods-tmobilegit/Pods-tmobilegit.debug.xcconfig"; sourceTree = "<group>"; };
+		B98217962832AD46D5E9C62C /* Pods-tmobilegitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmobilegitUITests.release.xcconfig"; path = "Target Support Files/Pods-tmobilegitUITests/Pods-tmobilegitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CC1D621C04FD620EB2399209 /* Pods_tmobilegit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmobilegit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D36975E96460CCC72F043D39 /* Pods-tmobilegitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmobilegitUITests.debug.xcconfig"; path = "Target Support Files/Pods-tmobilegitUITests/Pods-tmobilegitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF092AE523219132001921E2 /* tmobilegit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tmobilegit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF092AE823219132001921E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF092AEA23219132001921E2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +65,10 @@
 		EF092B0623219135001921E2 /* tmobilegitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tmobilegitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF092B0A23219135001921E2 /* tmobilegitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmobilegitUITests.swift; sourceTree = "<group>"; };
 		EF092B0C23219135001921E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF092B1823219311001921E2 /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Environment.plist; sourceTree = "<group>"; };
+		EF092B1A232194C1001921E2 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		EF092B1C23219526001921E2 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		EF092B1E2321954F001921E2 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1300471A317330DF763969AD /* Pods_tmobilegit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79DA1324E58F7F624D3B1CC2 /* Pods_tmobilegitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050D909BE412D358CB0E3F9B /* Pods_tmobilegitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100C8ED695231BA7B52AA6A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF2BCF4A81259606E7CD9D7A /* Pods-tmobilegit.debug.xcconfig */,
+				2DD9DE08E7DF418875DA6FBF /* Pods-tmobilegit.release.xcconfig */,
+				874FE1E1CBF9F187EBD3BF42 /* Pods-tmobilegitTests.debug.xcconfig */,
+				65D72AA94F81E0F2BDE1F59B /* Pods-tmobilegitTests.release.xcconfig */,
+				D36975E96460CCC72F043D39 /* Pods-tmobilegitUITests.debug.xcconfig */,
+				B98217962832AD46D5E9C62C /* Pods-tmobilegitUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C0F15E00E959EFA373DDDC1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC1D621C04FD620EB2399209 /* Pods_tmobilegit.framework */,
+				082F3880235E1A2008768624 /* Pods_tmobilegitTests.framework */,
+				96E8B858D855309485AF0FB8 /* Pods_tmobilegitUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EF092ADC23219132001921E2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +129,8 @@
 				EF092AFE23219135001921E2 /* tmobilegitTests */,
 				EF092B0923219135001921E2 /* tmobilegitUITests */,
 				EF092AE623219132001921E2 /* Products */,
+				100C8ED695231BA7B52AA6A6 /* Pods */,
+				C0F15E00E959EFA373DDDC1D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +154,10 @@
 				EF092AF123219135001921E2 /* Assets.xcassets */,
 				EF092AF323219135001921E2 /* LaunchScreen.storyboard */,
 				EF092AF623219135001921E2 /* Info.plist */,
+				EF092B1823219311001921E2 /* Environment.plist */,
+				EF092B1C23219526001921E2 /* ServiceManager.swift */,
+				EF092B1E2321954F001921E2 /* SearchResultModel.swift */,
+				EF092B1A232194C1001921E2 /* Utility.swift */,
 			);
 			path = tmobilegit;
 			sourceTree = "<group>";
@@ -135,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF092B0F23219135001921E2 /* Build configuration list for PBXNativeTarget "tmobilegit" */;
 			buildPhases = (
+				E0F6356F84D1EF635704047A /* [CP] Check Pods Manifest.lock */,
 				EF092AE123219132001921E2 /* Sources */,
 				EF092AE223219132001921E2 /* Frameworks */,
 				EF092AE323219132001921E2 /* Resources */,
+				4E2B97F6DCA58492420D1260 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF092B1223219135001921E2 /* Build configuration list for PBXNativeTarget "tmobilegitTests" */;
 			buildPhases = (
+				96CCA511DE64BA7A473D3336 /* [CP] Check Pods Manifest.lock */,
 				EF092AF723219135001921E2 /* Sources */,
 				EF092AF823219135001921E2 /* Frameworks */,
 				EF092AF923219135001921E2 /* Resources */,
@@ -170,6 +225,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF092B1523219135001921E2 /* Build configuration list for PBXNativeTarget "tmobilegitUITests" */;
 			buildPhases = (
+				91EE9F87DE60DE55CEB4D0F6 /* [CP] Check Pods Manifest.lock */,
 				EF092B0223219135001921E2 /* Sources */,
 				EF092B0323219135001921E2 /* Frameworks */,
 				EF092B0423219135001921E2 /* Resources */,
@@ -232,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF092B1923219311001921E2 /* Environment.plist in Resources */,
 				EF092AF523219135001921E2 /* LaunchScreen.storyboard in Resources */,
 				EF092AF223219135001921E2 /* Assets.xcassets in Resources */,
 				EF092AF023219132001921E2 /* Main.storyboard in Resources */,
@@ -254,14 +311,103 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E2B97F6DCA58492420D1260 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tmobilegit/Pods-tmobilegit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tmobilegit/Pods-tmobilegit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tmobilegit/Pods-tmobilegit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91EE9F87DE60DE55CEB4D0F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tmobilegitUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96CCA511DE64BA7A473D3336 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tmobilegitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0F6356F84D1EF635704047A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tmobilegit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EF092AE123219132001921E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF092B1B232194C1001921E2 /* Utility.swift in Sources */,
 				EF092AED23219132001921E2 /* DetailViewController.swift in Sources */,
+				EF092B1F2321954F001921E2 /* SearchResultModel.swift in Sources */,
 				EF092AEB23219132001921E2 /* MasterViewController.swift in Sources */,
 				EF092AE923219132001921E2 /* AppDelegate.swift in Sources */,
+				EF092B1D23219526001921E2 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +580,7 @@
 		};
 		EF092B1023219135001921E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF2BCF4A81259606E7CD9D7A /* Pods-tmobilegit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +599,7 @@
 		};
 		EF092B1123219135001921E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DD9DE08E7DF418875DA6FBF /* Pods-tmobilegit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +618,7 @@
 		};
 		EF092B1323219135001921E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 874FE1E1CBF9F187EBD3BF42 /* Pods-tmobilegitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +640,7 @@
 		};
 		EF092B1423219135001921E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65D72AA94F81E0F2BDE1F59B /* Pods-tmobilegitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +662,7 @@
 		};
 		EF092B1623219135001921E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D36975E96460CCC72F043D39 /* Pods-tmobilegitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +683,7 @@
 		};
 		EF092B1723219135001921E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B98217962832AD46D5E9C62C /* Pods-tmobilegitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
