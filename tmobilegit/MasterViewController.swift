@@ -15,6 +15,8 @@ class MasterViewController: UIViewController {
     
     @IBOutlet weak var masterTableView: UITableView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
 
@@ -100,6 +102,7 @@ class MasterViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                 
+                    self.showActivityIndicator(with: false)
                     self.results = response
                     self.refreshData()
                     
@@ -118,6 +121,8 @@ class MasterViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                 
+                    self.showActivityIndicator(with: false)
+                    
                     self.refreshData()
                     
                     //Comment : alert the user when something fails
@@ -153,6 +158,31 @@ class MasterViewController: UIViewController {
         }
     }
 
+    func showActivityIndicator(with flag : Bool) {
+        
+        if flag == true {
+            
+            DispatchQueue.main.async {
+                self.view.bringSubviewToFront(self.activityIndicator)
+                self.activityIndicator.startAnimating()
+                self.activityIndicator.isHidden = false
+                self.view.isUserInteractionEnabled = false
+            }
+        }
+        else {
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0) {
+                
+                self.view.sendSubviewToBack(self.activityIndicator)
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+                self.view.isUserInteractionEnabled = true
+                
+            }
+        }
+        
+    }
+
 }
 
 // MARK: - UISearchBarDelegate
@@ -172,6 +202,11 @@ extension MasterViewController : UISearchBarDelegate {
         
         if searchText.count >= 3 {
             //search
+            
+            DispatchQueue.main.async {
+                self.showActivityIndicator(with: true)
+            }
+            
             getUsersFor(string:searchText)
         }
         else {
