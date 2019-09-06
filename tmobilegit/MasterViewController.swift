@@ -55,6 +55,25 @@ class MasterViewController: UIViewController {
 
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showDetail" {
+            if let indexPath = self.masterTableView.indexPathForSelectedRow {
+                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                
+                let result = searchResults[indexPath.row]
+                
+                guard let strVal  = result.username else {return}
+                
+                controller.usernameStr = strVal
+                
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+                
+                controller.title = ""
+                
+            }
+        }
+
     }
     
     func getUsersFor(string : String) {
@@ -147,7 +166,7 @@ class MasterViewController: UIViewController {
 extension MasterViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //unauthenticated API has hourly limit of 60 calls - so this is disabled to preserve limit        
+        //unauthenticated API has hourly limit of 60 calls - so this is disabled to preserve limit
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {

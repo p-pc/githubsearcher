@@ -40,6 +40,14 @@ class Utility: NSObject {
         
     }
     
+    class func parseUserDetailsFrom(jsonDict : NSDictionary) -> UserDetailsModel {
+        
+        guard let aModel = UserDetailsModel(jsonData: jsonDict as! Dictionary<String, AnyObject>) else {return UserDetailsModel()}
+        
+        return aModel
+        
+    }
+    
     class func getStringFor(key:String) -> String? {
         
         guard let path = Bundle.main.path(forResource: "Environment", ofType: "plist") else {return nil}
@@ -67,6 +75,18 @@ class Utility: NSObject {
         guard let urlStr = Utility.getStringFor(key: "SearchURL") else {return nil}
         
         let strVal = String(format:urlStr, text)
+        
+        guard let urlVal = URL(string:strVal) else {return nil}
+        
+        return urlVal
+        
+    }
+    
+    class func detailsURLFor(username : String) -> URL? {
+        
+        guard let urlStr = Utility.getStringFor(key: "UserDetailsURL") else {return nil}
+        
+        let strVal = String(format:urlStr, username)
         
         guard let urlVal = URL(string:strVal) else {return nil}
         

@@ -96,6 +96,83 @@ class ServiceManager: NSObject {
         
     }
     
+    func getUserDetailsFor(username : String, completion:@escaping (Error?, UserDetailsModel?) ->Void) {
+        
+        var err:Error?
+        
+        guard let url = Utility.detailsURLFor(username: username) else {
+            
+            err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid URL"])
+            
+            completion(err,nil)
+            
+            return
+            
+        }
+        
+        guard let base64Credentials =  Utility.getAuthCreds() else {
+            
+            err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Auth Error"])
+            
+            completion(err,nil)
+            
+            return
+            
+        }
+        
+        let headers = ["Authorization": "Basic \(base64Credentials)"]
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).validate().responseJSON(completionHandler: { response in
+            
+            switch response.result {
+                
+            case .success:
+                
+                guard response.data != nil else {
+                    
+                    err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid Data"])
+                    
+                    completion(err,nil)
+                    
+                    return
+                    
+                }
+                
+                do {
+                    guard let parsedObject : NSDictionary = try JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions()) as? NSDictionary else {
+                        
+                        err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid JSON Data"])
+                        
+                        completion(err,nil)
+                        
+                        return
+                        
+                    }
+                    
+                    let userDetailsModel = Utility.parseUserDetailsFrom(jsonDict: parsedObject)
+                    
+                    completion(nil, userDetailsModel)
+                    
+                }
+                catch {
+                    
+                    err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid JSON"])
+                    
+                    completion(err,nil)
+                    
+                }
+                
+            case .failure(let errVal):
+                
+                err = NSError(domain:"", code:-1, userInfo:["localizedDescription":errVal.localizedDescription])
+                
+                completion(errVal,nil)
+            }
+            
+        })
+        
+    }
+    
     func getRepoCountFor(repoURLStr : String, completion:@escaping (Error?, Int) ->Void) {
         
         var err:Error?

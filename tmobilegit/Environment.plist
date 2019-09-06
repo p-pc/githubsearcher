@@ -4,6 +4,8 @@
 <dict>
 	<key>SearchURL</key>
 	<string>https://api.github.com/search/users?q=%@</string>
+	<key>UserDetailsURL</key>
+	<string>https://api.github.com/users/%@</string>
 	<key>ProjectsURL</key>
 	<string>https://api.github.com/users/%@/projects</string>
 	<key>Cred</key>
