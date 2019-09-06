@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SafariServices
 
 class DetailViewController: UIViewController {
 
@@ -324,7 +325,7 @@ extension DetailViewController : UISearchBarDelegate {
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
-extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
+extension DetailViewController : UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -354,6 +355,20 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let resultItem = searchResults[indexPath.row]
+        
+        guard let repoHTMLLink = resultItem.repoLink else {return}
+        
+        guard let urlVal = URL(string:repoHTMLLink) else {return}
+
+        let safariVC = SFSafariViewController(url: urlVal)
+        self.present(safariVC, animated: true, completion: nil)
+        safariVC.delegate = self
+
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Results"
     }
@@ -363,6 +378,10 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
         return false
     }
     
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             objects.remove(at: indexPath.row)
