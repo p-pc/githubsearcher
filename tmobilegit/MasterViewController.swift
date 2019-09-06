@@ -28,16 +28,6 @@ class MasterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(MasterViewController.appCameToForeground),
-            name: UIApplication.willEnterForegroundNotification,
-            object: nil)
-    }
-    
-    @objc func appCameToForeground(){
-        clearResults()
     }
 
     func clearResults() {
@@ -91,7 +81,7 @@ class MasterViewController: UIViewController {
             alert.addAction(alertActionOK)
             
             DispatchQueue.main.async {
-                
+            
                 self.present(alert, animated: true, completion: nil)
                 
                 return
@@ -127,7 +117,7 @@ class MasterViewController: UIViewController {
                 alert.addAction(alertActionOK)
                 
                 DispatchQueue.main.async {
-                    
+                
                     self.refreshData()
                     
                     //Comment : alert the user when something fails

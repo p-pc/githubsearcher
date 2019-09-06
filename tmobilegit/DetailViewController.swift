@@ -381,7 +381,7 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource, SFS
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Results"
+        return "Repos"
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
