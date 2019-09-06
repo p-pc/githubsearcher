@@ -50,6 +50,7 @@ class MasterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.title = "GitHub Searcher"
     }
 
     // MARK: - Segues
@@ -146,10 +147,7 @@ class MasterViewController: UIViewController {
 extension MasterViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    
-        
-        
-
+        //we can also do live fetch instead of searchBarTextDidEndEditing - but here the API looks less responsive for image loading and repo count - so updates made on click of Search button
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -203,6 +201,13 @@ extension MasterViewController : UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.repoCountLabel.text = "Repos: \(resultItem.repoCount)"
+        
+        if let repoStrUrl = resultItem.repoURL {
+            cell.repoUrl = repoStrUrl
+            //TODO: Enable below - this will cross the hourly API rate limit
+            //cell.getRepoCountAndUpdate()
+        }
+        
         
         if let imageURL = resultItem.iconURL {
             

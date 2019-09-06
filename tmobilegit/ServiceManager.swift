@@ -84,4 +84,100 @@ class ServiceManager: NSObject {
         
     }
     
+    func getRepoCountFor(repoURLStr : String, completion:@escaping (Error?, Int) ->Void) {
+        
+        var err:Error?
+        
+        guard let url = URL(string:repoURLStr) else {
+            
+            err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid URL"])
+            
+            completion(err,0)
+
+            return
+            
+        }
+        
+        Alamofire.request(url).responseJSON(completionHandler: { response in
+            
+            switch response.result {
+                
+            case .success:
+                
+                guard response.data != nil else {
+                    
+                    err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid Data"])
+                    
+                    completion(err,0)
+                    
+                    return
+                    
+                }
+                
+                do {
+                    
+//                    let parsedData = try JSONSerialization.jsonObject(with: response.data!) as! [[String:Any]]
+                    
+                    guard let parsedData : [[String:Any]] = try JSONSerialization.jsonObject(with: response.data!) as? [[String:Any]] else {
+                        
+                        err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid JSON Data"])
+                        
+                        completion(err,0)
+                        
+                        return
+                        
+                    }
+                    
+                    dLog("parsedData : \(parsedData.count)")
+                    
+                    let modelArrCount = parsedData.count
+                    
+                    completion(nil, modelArrCount)
+                    
+                } catch let error as NSError {
+                    
+                    dLog("JSONSerialization parsing error : \(error)")
+                    
+                    err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid JSON"])
+                    
+                    completion(err,0)
+                    
+                }
+                /*
+                do {
+                    
+                    guard let parsedObject : NSDictionary = try JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions()) as? NSDictionary else {
+                        
+                        err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid JSON Data"])
+                        
+                        completion(err,0)
+                        
+                        return
+                        
+                    }
+                    
+                    let modelArrCount = Utility.parseRepoCountFrom(jsonDict: parsedObject)
+                    
+                    completion(nil, modelArrCount)
+                    
+                }
+                catch {
+                    
+                    err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid JSON"])
+                    
+                    completion(err,0)
+                    
+                }
+                */
+            case .failure(let errVal):
+                
+                err = NSError(domain:"", code:-1, userInfo:["localizedDescription":errVal.localizedDescription])
+                
+                completion(errVal,0)
+            }
+            
+        })
+        
+    }
+    
 }

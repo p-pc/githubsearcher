@@ -40,6 +40,16 @@ class Utility: NSObject {
         
     }
     
+    class func parseRepoCountFrom(jsonDict : NSDictionary) -> Int {
+        
+        var resultArrCount = 0
+        
+        dLog("resultArr jsonDict : \(jsonDict)")
+        
+        return resultArrCount
+        
+    }
+    
     class func getStringFor(key:String) -> String? {
         
         guard let path = Bundle.main.path(forResource: "Environment", ofType: "plist") else {return nil}
