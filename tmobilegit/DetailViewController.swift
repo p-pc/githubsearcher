@@ -26,6 +26,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var repoActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var mainActivityIndicator: UIActivityIndicatorView!
+    
     var usernameStr : String = ""
     
     var repoURLStrVal : String = ""
@@ -72,10 +75,17 @@ class DetailViewController: UIViewController {
         
         self.bioTextView.text = ""
         
+        DispatchQueue.main.async {
+            self.showRepoActivityIndicator(with: false)
+        }
     }
 
     func getUserFullDetails() {
         
+        DispatchQueue.main.async {
+            self.showActivityIndicator(with: true)
+        }
+
         if !Reachability.forInternetConnection().isReachable() {
             
             let alert = UIAlertController(title: "", message: "Please connect to internet", preferredStyle: UIAlertController.Style.alert)
@@ -101,7 +111,7 @@ class DetailViewController: UIViewController {
             func onSuccess(response: UserDetailsModel) {
                 
                 DispatchQueue.main.async {
-                    
+                    self.showActivityIndicator(with: false)
                     self.userDetails = response
                     self.refreshData()
                     
@@ -119,6 +129,8 @@ class DetailViewController: UIViewController {
                 alert.addAction(alertActionOK)
                 
                 DispatchQueue.main.async {
+                    
+                    self.showActivityIndicator(with: false)
                     
                     self.refreshData()
                     
@@ -222,6 +234,10 @@ class DetailViewController: UIViewController {
     
     func refreshRepoList() {
         
+        DispatchQueue.main.async {
+            self.showRepoActivityIndicator(with: true)
+        }
+        
         if !Reachability.forInternetConnection().isReachable() {
             
             let alert = UIAlertController(title: "", message: "Please connect to internet", preferredStyle: UIAlertController.Style.alert)
@@ -247,7 +263,7 @@ class DetailViewController: UIViewController {
             func onSuccess(response: [RepoDetailsModel]) {
                 
                 DispatchQueue.main.async {
-                    
+                    self.showRepoActivityIndicator(with: false)
                     self.results = response
                     self.refreshDataForRepoList()
                     
@@ -265,6 +281,8 @@ class DetailViewController: UIViewController {
                 alert.addAction(alertActionOK)
                 
                 DispatchQueue.main.async {
+                    
+                    self.showRepoActivityIndicator(with: false)
                     
                     self.refreshDataForRepoList()
                     
@@ -299,6 +317,56 @@ class DetailViewController: UIViewController {
         didSet {
             configureView()
         }
+    }
+    
+    func showActivityIndicator(with flag : Bool) {
+        
+        if flag == true {
+            
+            DispatchQueue.main.async {
+                self.view.bringSubviewToFront(self.mainActivityIndicator)
+                self.mainActivityIndicator.startAnimating()
+                self.mainActivityIndicator.isHidden = false
+                self.view.isUserInteractionEnabled = false
+            }
+        }
+        else {
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0) {
+                
+                self.view.sendSubviewToBack(self.mainActivityIndicator)
+                self.mainActivityIndicator.stopAnimating()
+                self.mainActivityIndicator.isHidden = true
+                self.view.isUserInteractionEnabled = true
+                
+            }
+        }
+        
+    }
+    
+    func showRepoActivityIndicator(with flag : Bool) {
+        
+        if flag == true {
+            
+            DispatchQueue.main.async {
+                self.view.bringSubviewToFront(self.repoActivityIndicator)
+                self.repoActivityIndicator.startAnimating()
+                self.repoActivityIndicator.isHidden = false
+                self.view.isUserInteractionEnabled = false
+            }
+        }
+        else {
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0) {
+                
+                self.view.sendSubviewToBack(self.repoActivityIndicator)
+                self.repoActivityIndicator.stopAnimating()
+                self.repoActivityIndicator.isHidden = true
+                self.view.isUserInteractionEnabled = true
+                
+            }
+        }
+        
     }
 
 }

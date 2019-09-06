@@ -176,6 +176,14 @@
                                     <outlet property="delegate" destination="JEX-9P-axG" id="d1x-Fj-occ"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SzV-Oi-pe6">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2ii-sO-UEm">
+                                <rect key="frame" x="197" y="638" width="20" height="20"/>
+                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -184,6 +192,7 @@
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="CVH-um-asf" secondAttribute="trailing" constant="20" id="17i-rZ-6LN"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="X0A-FF-axp" secondAttribute="trailing" constant="20" id="30d-qF-KFI"/>
                             <constraint firstItem="X0A-FF-axp" firstAttribute="top" secondItem="dDv-PK-gS4" secondAttribute="bottom" constant="8" id="3Vl-N1-DVV"/>
+                            <constraint firstItem="2ii-sO-UEm" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="5zT-KG-hUO"/>
                             <constraint firstItem="CVH-um-asf" firstAttribute="leading" secondItem="nIp-Ev-zN7" secondAttribute="trailing" constant="8" id="7Dq-JX-Waj"/>
                             <constraint firstItem="bSQ-KY-hQl" firstAttribute="leading" secondItem="nIp-Ev-zN7" secondAttribute="trailing" constant="8" id="Axe-1m-2dV"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="x6x-oO-Qaj" secondAttribute="trailing" constant="20" id="B4m-cI-zbw"/>
@@ -197,6 +206,7 @@
                             <constraint firstItem="dDv-PK-gS4" firstAttribute="top" secondItem="x6x-oO-Qaj" secondAttribute="bottom" constant="8" id="UHQ-BZ-V2r"/>
                             <constraint firstItem="dDv-PK-gS4" firstAttribute="leading" secondItem="nIp-Ev-zN7" secondAttribute="trailing" constant="8" id="Uue-Iw-2XU"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="dDv-PK-gS4" secondAttribute="trailing" constant="20" id="UwU-f0-msX"/>
+                            <constraint firstItem="SzV-Oi-pe6" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="c2N-t6-Ztw"/>
                             <constraint firstAttribute="bottom" secondItem="pZq-Od-5YH" secondAttribute="bottom" id="c5d-Oz-R68"/>
                             <constraint firstItem="X0A-FF-axp" firstAttribute="leading" secondItem="nIp-Ev-zN7" secondAttribute="trailing" constant="8" id="e3v-co-Mo9"/>
                             <constraint firstItem="74s-xw-hYl" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="igR-dM-Sej"/>
@@ -206,9 +216,11 @@
                             <constraint firstItem="nIp-Ev-zN7" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="rNs-QJ-IQd"/>
                             <constraint firstItem="74s-xw-hYl" firstAttribute="top" secondItem="bSQ-KY-hQl" secondAttribute="bottom" constant="8" id="rWZ-oX-hGK"/>
                             <constraint firstItem="pZq-Od-5YH" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="rfA-yp-LNy"/>
+                            <constraint firstItem="2ii-sO-UEm" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="200" id="t2X-CL-qW0"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="74s-xw-hYl" secondAttribute="trailing" constant="20" id="t8m-Hj-EBi"/>
                             <constraint firstItem="kyA-Ys-RIf" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="vEj-0m-OV0"/>
                             <constraint firstItem="kyA-Ys-RIf" firstAttribute="top" secondItem="74s-xw-hYl" secondAttribute="bottom" constant="16" id="vjm-xi-Ctj"/>
+                            <constraint firstItem="SzV-Oi-pe6" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="yQs-ji-eZo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
@@ -222,6 +234,8 @@
                         <outlet property="imageView" destination="nIp-Ev-zN7" id="ooF-gB-eGJ"/>
                         <outlet property="joinDateLabel" destination="dDv-PK-gS4" id="fnr-pk-Hfx"/>
                         <outlet property="locationLabel" destination="x6x-oO-Qaj" id="zrB-sh-x9b"/>
+                        <outlet property="mainActivityIndicator" destination="SzV-Oi-pe6" id="TOS-8x-Vf9"/>
+                        <outlet property="repoActivityIndicator" destination="2ii-sO-UEm" id="PqA-nj-gyS"/>
                         <outlet property="searchBar" destination="kyA-Ys-RIf" id="BFx-9k-dcE"/>
                         <outlet property="tableView" destination="pZq-Od-5YH" id="oZa-ZO-ojP"/>
                         <outlet property="usernameLabel" destination="CVH-um-asf" id="hjr-KL-Gyk"/>
@@ -253,7 +267,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-yb-jV4">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-yb-jV4">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                                 <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
