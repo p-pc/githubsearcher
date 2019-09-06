@@ -200,6 +200,28 @@ extension MasterViewController : UISearchBarDelegate {
             return
         }
         
+        let charSet = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz").inverted
+        
+        if (searchText.rangeOfCharacter(from: charSet) != nil) {
+            
+            let alert = UIAlertController(title: "", message: "Please use only alphabets", preferredStyle: UIAlertController.Style.alert)
+            
+            let alertActionOK = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alert.addAction(alertActionOK)
+            
+            DispatchQueue.main.async {
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                return
+                
+            }
+
+        } else {
+            dLog("valid search query")
+        }
+        
         if searchText.count >= 3 {
             //search
             

@@ -69,9 +69,9 @@ class DetailViewController: UIViewController {
     
         self.joinDateLabel.text = ""
     
-        self.followersLabel.text = "0 Followers"
+        self.followersLabel.text = ""
         
-        self.followingLabel.text = "Following 0"
+        self.followingLabel.text = ""
         
         self.bioTextView.text = ""
         
