@@ -40,16 +40,6 @@ class Utility: NSObject {
         
     }
     
-    class func parseRepoCountFrom(jsonDict : NSDictionary) -> Int {
-        
-        var resultArrCount = 0
-        
-        dLog("resultArr jsonDict : \(jsonDict)")
-        
-        return resultArrCount
-        
-    }
-    
     class func getStringFor(key:String) -> String? {
         
         guard let path = Bundle.main.path(forResource: "Environment", ofType: "plist") else {return nil}
@@ -61,6 +51,14 @@ class Utility: NSObject {
         }else{
             return nil
         }
+        
+    }
+    
+    class func getAuthCreds() -> String? {
+        
+        guard let urlStr = Utility.getStringFor(key: "Cred") else {return nil}
+        
+        return urlStr
         
     }
     

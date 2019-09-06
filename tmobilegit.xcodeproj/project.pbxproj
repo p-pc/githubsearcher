@@ -24,6 +24,7 @@
 		EF092B1F2321954F001921E2 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B1E2321954F001921E2 /* SearchResultModel.swift */; };
 		EF092B252321A0B3001921E2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EF092B242321A0B3001921E2 /* Reachability.m */; };
 		EF092B272321E77F001921E2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B262321E77F001921E2 /* UserTableViewCell.swift */; };
+		EF092B2B23222C3F001921E2 /* ReposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B2A23222C3F001921E2 /* ReposTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		EF092B232321A0B3001921E2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		EF092B242321A0B3001921E2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		EF092B262321E77F001921E2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		EF092B2A23222C3F001921E2 /* ReposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				EF092B1E2321954F001921E2 /* SearchResultModel.swift */,
 				EF092B262321E77F001921E2 /* UserTableViewCell.swift */,
 				EF092B1A232194C1001921E2 /* Utility.swift */,
+				EF092B2A23222C3F001921E2 /* ReposTableViewCell.swift */,
 			);
 			path = tmobilegit;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				EF092AEB23219132001921E2 /* MasterViewController.swift in Sources */,
 				EF092AE923219132001921E2 /* AppDelegate.swift in Sources */,
 				EF092B1D23219526001921E2 /* ServiceManager.swift in Sources */,
+				EF092B2B23222C3F001921E2 /* ReposTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

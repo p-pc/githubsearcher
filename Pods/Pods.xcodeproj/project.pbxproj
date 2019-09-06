@@ -121,10 +121,10 @@
 		4F3BB563C0100B22223E1FD7FDED3EAF /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		50BA748E0F1D5D856091A3D0A1288F70 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		516D31338AEC77D8D29CCF208F78ABAA /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/ImageDownloader.swift; sourceTree = "<group>"; };
-		52A18B74B305BE765D415E83BE8A78E4 /* Pods_tmobilegit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tmobilegit.framework; path = "Pods-tmobilegit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52A18B74B305BE765D415E83BE8A78E4 /* Pods_tmobilegit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmobilegit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3DA506A8CAEC60021343E294FA8D0D /* Pods-tmobilegitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tmobilegitTests.release.xcconfig"; sourceTree = "<group>"; };
 		5CBB0FCBCA30DDA660928F6C67916198 /* Pods-tmobilegitUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tmobilegitUITests-Info.plist"; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB7BA9A7894CBEB3A59D4B68EB17E98 /* Pods-tmobilegit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tmobilegit.release.xcconfig"; sourceTree = "<group>"; };
 		62CE0B62C8A0CF77030C9551522CD325 /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		6938A0162E4B6CB956B0B9733E27B4D9 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
@@ -149,17 +149,17 @@
 		98A34F48C3A4AA236E803A5183A1741D /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
 		98F82BED943D70519798D2999C639F6F /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
 		9C0778C10C4C17CD681E7467C20AA2E6 /* Pods-tmobilegitTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tmobilegitTests.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A14E633C754A4A03DCB96641B063A7BF /* Pods-tmobilegitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tmobilegitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6252C271E9C48EC6BE0D9242595071F /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
 		B6156C50D9A7D3120D5E73A048EB2591 /* Pods-tmobilegitUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tmobilegitUITests.modulemap"; sourceTree = "<group>"; };
 		BAB47DF169633B487245721AB69809C0 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		BADA86761F81A3747A4A0BF648B3D005 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		BC0F8E644D04FA75E8AC284565944E1C /* Pods_tmobilegitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tmobilegitTests.framework; path = "Pods-tmobilegitTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC0F8E644D04FA75E8AC284565944E1C /* Pods_tmobilegitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmobilegitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D7A2291B5DCDCF5F9D52AC70210E00 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		C2D352946A0B06528EA812819C11E3D2 /* Pods-tmobilegit-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tmobilegit-frameworks.sh"; sourceTree = "<group>"; };
 		C3B516897E8778FD0942F1C0AED0006C /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
-		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58CA5B73B95EE5634348E90BBD06D4D /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
 		CB3191A807EAFEA2074AA67C070A4AB2 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		CD6B3D9DEE121A15222E6D8AF5803049 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 		F5783A7EA4CB99958F2FB4E667F3F219 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		FB824384C723C82C49E1CB39E96CEAF4 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
 		FC9E0F94F060FE14159A1A4824B13349 /* Pods-tmobilegitTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tmobilegitTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		FE1BD53D067B603FAD54B49FC72A38E0 /* Pods_tmobilegitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tmobilegitUITests.framework; path = "Pods-tmobilegitUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE1BD53D067B603FAD54B49FC72A38E0 /* Pods_tmobilegitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmobilegitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF00BE02DEF3F0FC58DA2EE776EB2E77 /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -361,7 +361,6 @@
 				2F5CDAA3AE4FE612CFCD90EE77D57797 /* UIButton+Kingfisher.swift */,
 				0BB3C3CA1E440CE0420EB5CD3E5FA632 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -419,7 +418,6 @@
 				8AB6166D564EB6967399F70FBE05D9F1 /* Validation.swift */,
 				3102DC3A1E8F1EEDE855EE04FAE7E861 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};

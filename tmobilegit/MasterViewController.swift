@@ -147,7 +147,7 @@ class MasterViewController: UIViewController {
 extension MasterViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //we can also do live fetch instead of searchBarTextDidEndEditing - but here the API looks less responsive for image loading and repo count - so updates made on click of Search button
+        //unauthenticated API has hourly limit of 60 calls - so this is disabled to preserve limit        
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {

@@ -12,7 +12,18 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var joinDateLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var bioTextView: UITextView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
@@ -35,6 +46,26 @@ class DetailViewController: UIViewController {
         }
     }
 
+}
 
+// MARK: - UISearchBarDelegate
+
+extension DetailViewController : UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.isFirstResponder {
+            searchBar.resignFirstResponder()
+        }
+    }
+    
+    
 }
 
