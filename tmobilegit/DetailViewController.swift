@@ -27,8 +27,20 @@ class DetailViewController: UIViewController {
     
     var usernameStr : String = ""
     
+    var repoURLStrVal : String = ""
+    
     var userDetails = UserDetailsModel()
     
+    var results = [RepoDetailsModel]() {
+        didSet {
+            searchResults = results
+        }
+    }
+    
+    var searchResults = [RepoDetailsModel]()
+    
+    var objects = [Any]()
+
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
@@ -136,6 +148,13 @@ class DetailViewController: UIViewController {
         
     }
     
+    func refreshDataForRepoList() {
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     func refreshData() {
         DispatchQueue.main.async {
             //1. set all label values and load image in image view
@@ -194,8 +213,85 @@ class DetailViewController: UIViewController {
                 }
                 
             }
+            
             //2. fetch repos and reload - self.tableView.reloadData()
+            self.refreshRepoList()
         }
+    }
+    
+    func refreshRepoList() {
+        
+        if !Reachability.forInternetConnection().isReachable() {
+            
+            let alert = UIAlertController(title: "", message: "Please connect to internet", preferredStyle: UIAlertController.Style.alert)
+            
+            let alertActionOK = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alert.addAction(alertActionOK)
+            
+            DispatchQueue.main.async {
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                return
+                
+            }
+            
+        }
+        
+        ServiceManager.sharedInstance.getRepoListsFor(repoURLStr: repoURLStrVal, completion: { error,response in
+            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            func onSuccess(response: [RepoDetailsModel]) {
+                
+                DispatchQueue.main.async {
+                    
+                    self.results = response
+                    self.refreshDataForRepoList()
+                    
+                }
+            }
+            
+            func onFailure(error: Error) {
+                
+                self.results = [RepoDetailsModel]()
+                
+                let alert = UIAlertController(title: "", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                
+                let alertActionOK = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alert.addAction(alertActionOK)
+                
+                DispatchQueue.main.async {
+                    
+                    self.refreshDataForRepoList()
+                    
+                    //Comment : alert the user when something fails
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            }
+            
+            if let err = error {
+                
+                onFailure(error: err)
+                
+            }
+            else {
+                
+                guard let respData = response else {
+                    
+                    onFailure(error: NSError(domain:"", code:-1, userInfo:["localizedDescription":"Something went wrong"]))
+                    
+                    return
+                }
+                
+                onSuccess(response: respData)
+            }
+            
+        })
+        
     }
     
     var detailItem: NSDate? {
@@ -224,6 +320,56 @@ extension DetailViewController : UISearchBarDelegate {
         }
     }
     
-    
 }
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
+extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : ReposTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ReposTableViewCell", for: indexPath) as! ReposTableViewCell
+        
+        let resultItem = searchResults[indexPath.row]
+        
+        cell.repoNameLabel!.text = ""
+        cell.forksLabel!.text = ""
+        cell.starsLabel!.text = ""
+        
+        if let repoNameLabelStr = resultItem.repoName {
+            cell.repoNameLabel!.text = repoNameLabelStr
+        }
+        
+        cell.forksLabel!.text = "\(resultItem.forks) Forks"
+        
+        cell.starsLabel!.text = "\(resultItem.stars) Stars"
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Results"
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            objects.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
+}

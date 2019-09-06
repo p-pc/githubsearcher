@@ -64,7 +64,11 @@ class MasterViewController: UIViewController {
                 
                 guard let strVal  = result.username else {return}
                 
+                guard let repoStrVal = result.repoURL else {return}
+                
                 controller.usernameStr = strVal
+                
+                controller.repoURLStrVal = repoStrVal
                 
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true

@@ -40,6 +40,23 @@ class Utility: NSObject {
         
     }
     
+    class func parseRepoListsFrom(jsonDict : [[String:Any]]) -> [RepoDetailsModel] {
+        
+        var resultArr = [RepoDetailsModel]()
+                
+        for aDict in jsonDict {
+            
+            guard let aDictVal = aDict as? Dictionary<String,AnyObject> else {continue}
+            
+            guard let aModel = RepoDetailsModel(jsonData: aDictVal) else {continue}
+            
+            resultArr.append(aModel)
+        }
+        
+        return resultArr
+        
+    }
+    
     class func parseUserDetailsFrom(jsonDict : NSDictionary) -> UserDetailsModel {
         
         guard let aModel = UserDetailsModel(jsonData: jsonDict as! Dictionary<String, AnyObject>) else {return UserDetailsModel()}

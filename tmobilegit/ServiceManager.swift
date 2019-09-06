@@ -256,4 +256,82 @@ class ServiceManager: NSObject {
         
     }
     
+    func getRepoListsFor(repoURLStr : String, completion:@escaping (Error?, [RepoDetailsModel]?) ->Void) {
+        
+        var err:Error?
+        
+        guard let url = URL(string:repoURLStr) else {
+            
+            err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid URL"])
+            
+            completion(err,nil)
+            
+            return
+            
+        }
+        
+        guard let base64Credentials =  Utility.getAuthCreds() else {
+            
+            err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Auth Error"])
+            
+            completion(err,nil)
+            
+            return
+            
+        }
+        
+        let headers = ["Authorization": "Basic \(base64Credentials)"]
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).validate().responseJSON(completionHandler: { response in
+            
+            switch response.result {
+                
+            case .success:
+                
+                guard response.data != nil else {
+                    
+                    err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid Data"])
+                    
+                    completion(err,nil)
+                    
+                    return
+                    
+                }
+                
+                do {
+                    
+                    guard let parsedData : [[String:Any]] = try JSONSerialization.jsonObject(with: response.data!) as? [[String:Any]] else {
+                        
+                        err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid JSON Data"])
+                        
+                        completion(err,nil)
+                        
+                        return
+                        
+                    }
+                    
+                    let modelArr = Utility.parseRepoListsFrom(jsonDict: parsedData)
+                    
+                    completion(nil, modelArr)
+                    
+                }
+                catch {
+                    
+                    err = NSError(domain:"", code:-1, userInfo:["localizedDescription":"Invalid JSON"])
+                    
+                    completion(err,nil)
+                    
+                }
+                
+            case .failure(let errVal):
+                
+                err = NSError(domain:"", code:-1, userInfo:["localizedDescription":errVal.localizedDescription])
+                
+                completion(errVal,nil)
+            }
+            
+        })
+        
+    }
+    
 }

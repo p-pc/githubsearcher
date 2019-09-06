@@ -26,6 +26,7 @@
 		EF092B272321E77F001921E2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B262321E77F001921E2 /* UserTableViewCell.swift */; };
 		EF092B2B23222C3F001921E2 /* ReposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B2A23222C3F001921E2 /* ReposTableViewCell.swift */; };
 		EF092B2D23224252001921E2 /* UserDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B2C23224252001921E2 /* UserDetailsModel.swift */; };
+		EF092B2F23224CF4001921E2 /* RepoDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B2E23224CF4001921E2 /* RepoDetailsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		EF092B262321E77F001921E2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		EF092B2A23222C3F001921E2 /* ReposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposTableViewCell.swift; sourceTree = "<group>"; };
 		EF092B2C23224252001921E2 /* UserDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsModel.swift; sourceTree = "<group>"; };
+		EF092B2E23224CF4001921E2 /* RepoDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				EF092B1C23219526001921E2 /* ServiceManager.swift */,
 				EF092B1E2321954F001921E2 /* SearchResultModel.swift */,
 				EF092B2C23224252001921E2 /* UserDetailsModel.swift */,
+				EF092B2E23224CF4001921E2 /* RepoDetailsModel.swift */,
 				EF092B262321E77F001921E2 /* UserTableViewCell.swift */,
 				EF092B1A232194C1001921E2 /* Utility.swift */,
 				EF092B2A23222C3F001921E2 /* ReposTableViewCell.swift */,
@@ -435,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF092B2F23224CF4001921E2 /* RepoDetailsModel.swift in Sources */,
 				EF092B1B232194C1001921E2 /* Utility.swift in Sources */,
 				EF092AED23219132001921E2 /* DetailViewController.swift in Sources */,
 				EF092B1F2321954F001921E2 /* SearchResultModel.swift in Sources */,
