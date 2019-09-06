@@ -89,12 +89,15 @@
                                     <constraint firstAttribute="height" constant="55" id="r4C-EU-30X"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ycq-pz-WED" id="HG3-Ha-YFR"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nns-zr-F06">
                                 <rect key="frame" x="0.0" y="143" width="414" height="753"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Kcj-xK-sM0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="60" id="Kcj-xK-sM0" customClass="UserTableViewCell" customModule="tmobilegit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kcj-xK-sM0" id="Lct-3P-cZO">
@@ -136,8 +139,17 @@
                                                 <constraint firstItem="itG-PQ-Xnf" firstAttribute="leading" secondItem="Z9Y-FL-aW1" secondAttribute="trailing" constant="8" id="kvw-HO-HlY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="Z9Y-FL-aW1" id="NXW-kg-ZQ4"/>
+                                            <outlet property="repoCountLabel" destination="vfi-Kg-7rn" id="Kz2-RP-ftU"/>
+                                            <outlet property="usernameLabel" destination="itG-PQ-Xnf" id="fJ0-12-nlh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ycq-pz-WED" id="gHE-Lk-m2D"/>
+                                    <outlet property="delegate" destination="ycq-pz-WED" id="pge-XI-ijL"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,6 +165,10 @@
                         <viewLayoutGuide key="safeArea" id="fIo-kF-kBX"/>
                     </view>
                     <navigationItem key="navigationItem" id="B1a-Es-0NT"/>
+                    <connections>
+                        <outlet property="masterTableView" destination="nns-zr-F06" id="Ylc-Nb-T8a"/>
+                        <outlet property="searchBar" destination="OZ7-je-u7c" id="J6l-pX-NWr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4a-SG-gIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -22,6 +22,8 @@
 		EF092B1B232194C1001921E2 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B1A232194C1001921E2 /* Utility.swift */; };
 		EF092B1D23219526001921E2 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B1C23219526001921E2 /* ServiceManager.swift */; };
 		EF092B1F2321954F001921E2 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B1E2321954F001921E2 /* SearchResultModel.swift */; };
+		EF092B252321A0B3001921E2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EF092B242321A0B3001921E2 /* Reachability.m */; };
+		EF092B272321E77F001921E2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF092B262321E77F001921E2 /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,10 @@
 		EF092B1A232194C1001921E2 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		EF092B1C23219526001921E2 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		EF092B1E2321954F001921E2 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
+		EF092B222321A0B2001921E2 /* tmobilegit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tmobilegit-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF092B232321A0B3001921E2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		EF092B242321A0B3001921E2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		EF092B262321E77F001921E2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 		EF092AE723219132001921E2 /* tmobilegit */ = {
 			isa = PBXGroup;
 			children = (
+				EF092B202321A088001921E2 /* libs */,
 				EF092AE823219132001921E2 /* AppDelegate.swift */,
 				EF092AEA23219132001921E2 /* MasterViewController.swift */,
 				EF092AEC23219132001921E2 /* DetailViewController.swift */,
@@ -157,6 +164,7 @@
 				EF092B1823219311001921E2 /* Environment.plist */,
 				EF092B1C23219526001921E2 /* ServiceManager.swift */,
 				EF092B1E2321954F001921E2 /* SearchResultModel.swift */,
+				EF092B262321E77F001921E2 /* UserTableViewCell.swift */,
 				EF092B1A232194C1001921E2 /* Utility.swift */,
 			);
 			path = tmobilegit;
@@ -178,6 +186,24 @@
 				EF092B0C23219135001921E2 /* Info.plist */,
 			);
 			path = tmobilegitUITests;
+			sourceTree = "<group>";
+		};
+		EF092B202321A088001921E2 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				EF092B212321A095001921E2 /* Reachability */,
+				EF092B222321A0B2001921E2 /* tmobilegit-Bridging-Header.h */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		EF092B212321A095001921E2 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				EF092B232321A0B3001921E2 /* Reachability.h */,
+				EF092B242321A0B3001921E2 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +278,7 @@
 				TargetAttributes = {
 					EF092AE423219132001921E2 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					EF092AFA23219135001921E2 = {
 						CreatedOnToolsVersion = 10.3;
@@ -405,6 +432,8 @@
 				EF092B1B232194C1001921E2 /* Utility.swift in Sources */,
 				EF092AED23219132001921E2 /* DetailViewController.swift in Sources */,
 				EF092B1F2321954F001921E2 /* SearchResultModel.swift in Sources */,
+				EF092B252321A0B3001921E2 /* Reachability.m in Sources */,
+				EF092B272321E77F001921E2 /* UserTableViewCell.swift in Sources */,
 				EF092AEB23219132001921E2 /* MasterViewController.swift in Sources */,
 				EF092AE923219132001921E2 /* AppDelegate.swift in Sources */,
 				EF092B1D23219526001921E2 /* ServiceManager.swift in Sources */,
@@ -583,6 +612,7 @@
 			baseConfigurationReference = AF2BCF4A81259606E7CD9D7A /* Pods-tmobilegit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HX7S377P6E;
 				INFOPLIST_FILE = tmobilegit/Info.plist;
@@ -592,6 +622,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ossum.tmobilegit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tmobilegit/libs/tmobilegit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -602,6 +634,7 @@
 			baseConfigurationReference = 2DD9DE08E7DF418875DA6FBF /* Pods-tmobilegit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HX7S377P6E;
 				INFOPLIST_FILE = tmobilegit/Info.plist;
@@ -611,6 +644,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ossum.tmobilegit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tmobilegit/libs/tmobilegit-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

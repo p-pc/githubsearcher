@@ -10,15 +10,13 @@ import UIKit
 
 class SearchResultModel: NSObject, NSCoding {
     
-    var firstURL : String?
+    var username : String?
     
     var iconURL : String?
     
-    var resultHTML : String?
+    var repoURL : String?
     
-    var text : String?
-    
-    var title : String?
+    var repoCount : Int = 0
     
     override init() {
         
@@ -30,48 +28,36 @@ class SearchResultModel: NSObject, NSCoding {
         
         dLog("jsonData : \(jsonData)")
         
-        if let textStr = jsonData["Text"] as? String {
-            self.text = textStr
-            
-            //comment - this is just an ugly coding for time's sake - better parsing of html is possible
-            let textArr = textStr.components(separatedBy: " -")
-            
-            if textArr.first != nil {
-                self.title = textArr.first
-            }
-            
+        if let usernameStr = jsonData["login"] as? String {
+            self.username = usernameStr
         }
         
-        if let resultStr = jsonData["Result"] as? String {
-            self.resultHTML = resultStr
+        if let iconURLStr = jsonData["avatar_url"] as? String {
+            self.iconURL = iconURLStr
         }
         
-        if let firstURLStr = jsonData["FirstURL"] as? String {
-            self.firstURL = firstURLStr
+        if let repoURLStr = jsonData["repos_url"] as? String {
+            self.repoURL = repoURLStr
         }
         
-        if let imgURLStr = jsonData["Icon"]!["URL"] as? String {
-            self.iconURL = imgURLStr
-        }
+        //get repo count here
         
     }
     
     
     required convenience init?(coder decoder: NSCoder){
         self.init()
-        self.firstURL = decoder.decodeObject(forKey: "firstURL") as! String?
+        self.username = decoder.decodeObject(forKey: "username") as! String?
         self.iconURL = decoder.decodeObject(forKey: "iconURL") as! String?
-        self.resultHTML = decoder.decodeObject(forKey: "resultHTML") as! String?
-        self.text = decoder.decodeObject(forKey: "text") as! String?
-        self.title = decoder.decodeObject(forKey: "title") as! String?
+        self.repoURL = decoder.decodeObject(forKey: "repoURL") as! String?
+        self.repoCount = decoder.decodeObject(forKey: "repoCount") as! Int
     }
     
     func encode(with coder: NSCoder){
-        coder.encode(self.firstURL, forKey: "firstURL")
+        coder.encode(self.username, forKey: "username")
         coder.encode(self.iconURL, forKey: "iconURL")
-        coder.encode(self.resultHTML, forKey: "resultHTML")
-        coder.encode(self.text, forKey: "text")
-        coder.encode(self.title, forKey: "title")
+        coder.encode(self.repoURL, forKey: "repoURL")
+        coder.encode(self.repoCount, forKey: "repoCount")
     }
     
 }
