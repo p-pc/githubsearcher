@@ -26,7 +26,7 @@ class SearchResultModel: NSObject, NSCoding {
         
         self.init()
         
-        dLog("jsonData : \(jsonData)")
+//        dLog("jsonData : \(jsonData)")
         
         if let usernameStr = jsonData["login"] as? String {
             self.username = usernameStr

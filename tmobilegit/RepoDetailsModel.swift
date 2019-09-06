@@ -26,7 +26,7 @@ class RepoDetailsModel: NSObject, NSCoding {
         
         self.init()
         
-        dLog("jsonData : \(jsonData)")
+//        dLog("jsonData : \(jsonData)")
         
         if let repoNameStr = jsonData["name"] as? String {
             self.repoName = repoNameStr

@@ -227,8 +227,7 @@ extension MasterViewController : UITableViewDelegate, UITableViewDataSource {
         
         if let repoStrUrl = resultItem.repoURL {
             cell.repoUrl = repoStrUrl
-            //TODO: Enable below - this will cross the hourly API rate limit
-            //cell.getRepoCountAndUpdate()
+            cell.getRepoCountAndUpdate()
         }
         
         

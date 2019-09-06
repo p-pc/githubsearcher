@@ -309,6 +309,17 @@ extension DetailViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        if searchText == "" {
+            searchResults = results
+            refreshData()
+            return
+        }
+        
+        let searchResultsFiltered = results.filter({($0.repoName?.localizedCaseInsensitiveContains(searchText))!})
+        
+        searchResults = searchResultsFiltered
+        
+        refreshDataForRepoList()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {

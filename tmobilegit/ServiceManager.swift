@@ -229,7 +229,7 @@ class ServiceManager: NSObject {
                         
                     }
                     
-                    dLog("parsedData : \(parsedData.count)")
+//                    dLog("parsedData : \(parsedData.count)")
                     
                     let modelArrCount = parsedData.count
                     
